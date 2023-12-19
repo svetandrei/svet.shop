@@ -1122,12 +1122,12 @@ body {
         grid-area: 2 / 1 / 2 / 3;
       }
       &__items {
-        grid-template-columns: repeat(3, 296px);
-        grid-template-rows: repeat(3, 420px);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, minmax(420px, 1fr));
         margin-bottom: 32px;
         @include media("max", "lg") {
-          grid-template-columns: repeat(2, 296px);
-          grid-template-rows: repeat(3, 420px);
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, minmax(420px, 1fr));
         }
         @include media("max", "md") {
           grid-template-columns: repeat(2, 1fr);
@@ -1463,7 +1463,7 @@ body {
         grid-template-rows: repeat(3, minmax(420px, 1fr));
       }
       @include media("max", "md") {
-        grid-template-rows: repeat(3, 278px);
+        grid-template-rows: repeat(3, minmax(278px, 1fr));
         grid-gap: 16px;
         .card {
           &__item {
@@ -1604,10 +1604,10 @@ body {
     /* Categories */
     .category {
       grid-template-columns: 405px 1fr 1fr 405px;
-      grid-template-rows: 511px 405px;
+      grid-template-rows: minmax(511px, 1fr) minmax(405px, auto);
       @include media("max", "xl") {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 511px);
+        grid-template-rows: repeat(2, minmax(511px, 1fr));
       }
       @include media("max", "lg") {
         grid-template-columns: repeat(2, 1fr);
@@ -1775,10 +1775,10 @@ body {
     /* Articles */
     .articles {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 676px;
+      grid-template-rows: minmax(676px, 1fr);
       @include media("max", "xl") {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 456px;
+        grid-template-rows: minmax(456px, 1fr);
       }
       @include media("max", "lg") {
         grid-template-columns: repeat(2, 1fr);
@@ -1827,6 +1827,7 @@ body {
           font-size: 24px;
           flex-grow: 1;
           line-height: normal;
+          margin-bottom: 35px;
           @include media("max", "xl") {
             font-size: 16px;
           }
